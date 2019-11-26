@@ -21,6 +21,11 @@ def second_supply_for_fourth_of_july(holiday_hash)
 end
 
 def add_supply_to_winter_holidays(holiday_hash, supply)
+  holiday_supplies[:summer][:fourth_of_july][1]
+  holiday_supplies[:winter][:christmas].include?("Balloon")
+  holiday_supplies[:winter][:new_years].include?("Balloons")
+  
+  
   # holiday_hash is identical to the one above
   # add the second argument, which is a supply, to BOTH the
   # Christmas AND the New Year's arrays
@@ -28,13 +33,19 @@ def add_supply_to_winter_holidays(holiday_hash, supply)
 end
 
 
-def add_supply_to_memorial_day(holiday_hash, supply)
+def add_supply_to_memorial_day(holiday_hash, supplies)
+  holiday_supplies[:spring][:memorial].include?("Grill")
   # again, holiday_hash is the same as the ones above
   # add the second argument to the memorial day array
 
 end
 
 def add_new_holiday_with_supplies(holiday_hash, season, holiday_name, supply_array)
+  holiday_hash[:fall].keys.include?(:columbus_day)
+  columbus_day_supplies = columbus_day_supplies = ["Flags", "Parade Floats", "Italian Food"]
+  add_new_holiday_with_supplies(holiday_supplies, :fall, :columbus_day, columbus_day_supplies)
+  holiday_supplies[:fall].keys.include?("columbus_day")
+
   # code here
   # remember to return the updated hash
 
@@ -46,6 +57,7 @@ def all_winter_holiday_supplies(holiday_hash)
 end
 
 def all_supplies_in_holidays(holiday_hash)
+  winter_supplies(holiday_supplies)
   # iterate through holiday_hash and print items such that your readout resembles:
   # Winter:
   #   Christmas: Lights, Wreath
